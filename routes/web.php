@@ -31,6 +31,7 @@ Route::put('/todos/{todo}/update', [App\Http\Controllers\TodosController::class,
 
 Route::delete('/todos/{todo}/delete', [App\Http\Controllers\TodosController::class, 'destroy'])->name('todos.destroy');
 
+Route::get('/todos/{todo}/complete', [App\Http\Controllers\TodosController::class, 'complete'])->name('todos.complete');
 
 
 

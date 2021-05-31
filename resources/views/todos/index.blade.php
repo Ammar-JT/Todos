@@ -31,6 +31,10 @@ Todos Index
                                         <td>
                                             <button onClick = "return confirm('are you sure you want to delete this todo?')" type="submit" class="btn btn-danger btn-sm">delete</button>
                                         </td>
+                                        @if (!$todo->completed)
+                                            <a href="/todos/{{$todo->id}}/complete" class="btn btn-warning btn-sm ">Complete</a>
+                                        @endif
+
                                     </form>
                                 </div>
                             </li>
