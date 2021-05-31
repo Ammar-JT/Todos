@@ -15,11 +15,24 @@ Todos Index
                 Todos
                 </div>
                 <div class="card-body">
+                    @include('inc.messages')
+
                     <ul class="list-group">
                         @foreach ($todos as $todo)
                             <li class="list-group-item">
                                 {{$todo->name}}
-                                <a href="/todos/{{$todo->id}}" class="btn btn-primary btn-sm float-end">View</a>
+                                <div class="float-end">
+                                    
+                                    <form method="POST" action="/todos/{{$todo->id}}/delete">
+                                        @csrf
+                                        @method('delete')
+                                        <a href="/todos/{{$todo->id}}" class="btn btn-primary btn-sm ">View</a>
+                                        <a href="/todos/{{$todo->id}}/edit" class="btn btn-info btn-sm ">Edit</a>
+                                        <td>
+                                            <button onClick = "return confirm('are you sure you want to delete this todo?')" type="submit" class="btn btn-danger btn-sm">delete</button>
+                                        </td>
+                                    </form>
+                                </div>
                             </li>
                         @endforeach
                     </ul>

@@ -20,14 +20,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/todos">Todos</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/todos">Todos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/todos/create">Create Todo</a>
+                    </li>
+                </ul>
             </div>
+            
         </div>
     </nav>
     <div class="container">
-        
         @yield('content')
         
     </div>
